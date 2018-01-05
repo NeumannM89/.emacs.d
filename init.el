@@ -53,6 +53,13 @@
 
 (setq-default tab-width 4)
 
+(use-package vlf
+  :ensure t
+  :config
+  (require 'vlf-setup)
+  (custom-set-variables
+   '(vlf-application 'dont-ask)))
+
 (use-package smartparens-config
     :ensure smartparens
     :init
@@ -304,6 +311,7 @@
 (use-package ycmd
   :ensure t
   :init
+  (set-variable 'ycmd-global-config "/home/mneumann/.emacs.d/ycmd_extra_conf.py")
   (set-variable 'ycmd-server-command '("python" "/home/mneumann/work/ycmd/ycmd/"))
   (set-variable 'ycmd-startup-timeout 15)
   :config
